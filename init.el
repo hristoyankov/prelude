@@ -32,6 +32,13 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar current-user
       (getenv
        (if (equal system-type 'windows-nt) "USERNAME" "USER")))
@@ -106,6 +113,10 @@ by Prelude.")
 (require 'prelude-editor)
 (require 'prelude-global-keybindings)
 
+(package-install 'ruby-guard)
+(package-install 'rvm)
+(package-install 'rubocop)
+
 ;; OSX specific settings
 (when (eq system-type 'darwin)
   (require 'prelude-osx))
@@ -147,5 +158,6 @@ Very useful for people using their Mac with a Windows external keyboard from tim
       (message "Command is now bound to SUPER and Option is bound to META."))))
 
 (global-set-key (kbd "C-c w") 'swap-meta-and-super)
+(global-set-key (kbd "M-p") 'ace-window)
 
 ;;; init.el ends here
