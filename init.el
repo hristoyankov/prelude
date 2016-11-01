@@ -158,6 +158,12 @@ Very useful for people using their Mac with a Windows external keyboard from tim
       (message "Command is now bound to SUPER and Option is bound to META."))))
 
 (global-set-key (kbd "C-c w") 'swap-meta-and-super)
-(global-set-key (kbd "M-p") 'ace-window)
+
+(defun prev-window ()
+  "Go back to the previous window used."
+  (interactive)
+  (other-window -1))
+(global-set-key (kbd "C-.") 'other-window)
+(global-set-key (kbd "C-,") 'prev-window)
 
 ;;; init.el ends here
