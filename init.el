@@ -166,4 +166,7 @@ Very useful for people using their Mac with a Windows external keyboard from tim
 (global-set-key (kbd "C-.") 'other-window)
 (global-set-key (kbd "C-,") 'prev-window)
 
+(scroll-bar-mode -1)
+(global-linum-mode 1)
+
 ;;; init.el ends here
